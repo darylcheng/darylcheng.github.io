@@ -118,6 +118,15 @@ h1 {
   margin-left: 0.15rem;
 }
 
+/* Acronyms set in small capitals rather than full caps, so they sit
+   quietly in running text instead of shouting. Typed lower-case in
+   the markup — see note on the SC font in the nav rule below. */
+.sc {
+  font-family: "Alegreya Sans SC", "Alegreya Sans", sans-serif;
+  font-style: normal;
+  letter-spacing: 0.02em;
+}
+
 p.subtitle {
   margin: 0.2rem 0 0;
   font-size: 1.05rem;
