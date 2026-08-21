@@ -1,0 +1,221 @@
+/* ------------------------------------------------------------------
+   Daryl Cheng — splash page
+   Typographic system after Bringhurst's "Elements of Typographic
+   Style": a single harmonised baseline grid, a restrained type scale,
+   italics and small capitals for emphasis instead of extra weights,
+   flush left / ragged right setting throughout.
+   ------------------------------------------------------------------ */
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/AlegreyaSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/AlegreyaSans-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../fonts/AlegreyaSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* True small-capitals cut, not a synthetic transform: lower-case
+   input renders as small caps, upper-case input as regular capitals. */
+@font-face {
+  font-family: "Alegreya Sans SC";
+  src: url("../fonts/AlegreyaSansSC-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* One leading value drives every vertical measurement on the page,
+     so text, rules and spacing all land on the same baseline grid. */
+  --baseline: 1.75rem;
+
+  --paper: #f6f4ee;
+  --ink: #1b1a17;
+  --ink-soft: #6e6759;
+  --rule: #d8d3c4;
+  --accent: #8a5a34;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 106%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Alegreya Sans", "Segoe UI", sans-serif;
+  font-weight: 400;
+  line-height: var(--baseline);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  width: 100%;
+  max-width: 30rem;
+  padding: calc(var(--baseline) * 2) calc(var(--baseline) * 1.25);
+  text-align: left;
+}
+
+/* -- header: small avatar beside name + subtitle -- */
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-bottom: var(--baseline);
+}
+
+.avatar {
+  flex: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.pronouns {
+  font-family: "Alegreya Sans SC", "Alegreya Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  vertical-align: middle;
+  margin-left: 0.15rem;
+}
+
+p.subtitle {
+  margin: 0.2rem 0 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-soft);
+  line-height: 1.3;
+}
+
+hr {
+  width: 100%;
+  height: 0;
+  margin: 0 0 var(--baseline);
+  border: none;
+  border-top: 1px solid var(--rule);
+}
+
+/* -- bio -- */
+
+.bio {
+  max-width: 32em;
+}
+
+.bio p {
+  margin: 0 0 var(--baseline);
+  font-size: 1rem;
+}
+
+.bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* -- nav -- */
+
+nav {
+  margin-top: var(--baseline);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  line-height: var(--baseline);
+}
+
+nav a {
+  font-family: "Alegreya Sans SC", "Alegreya Sans", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.1rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+nav .sep {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+footer {
+  margin-top: var(--baseline);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: var(--baseline);
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 1.85rem;
+  }
+  .identity {
+    gap: 0.85rem;
+  }
+  nav ul {
+    gap: 0.6rem;
+  }
+}
