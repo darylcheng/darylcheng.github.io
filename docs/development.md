@@ -10,7 +10,7 @@ Typographic Style*: a single harmonised baseline grid (`--baseline`
 in `assets/css/style.css` drives every vertical measurement), a
 restrained type scale, and emphasis handled with italics and true
 small capitals rather than extra font weights. Flush left, ragged
-right throughout. Set in **Alegreya Sans** (Regular, Italic, Medium)
+right throughout. Set in **Alegreya Sans** (Regular, Italic)
 and **Alegreya Sans SC** for the navigation and pronoun tag. Fonts are
 subsetted to Latin + common punctuation and self-hosted as woff2
 under `assets/fonts/` — no external font requests.
