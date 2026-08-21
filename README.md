@@ -14,6 +14,7 @@ Clinical Research Training Fellowship from the International Alliance
 for Cancer Early Detection (ACED).
 
 **[UCL profile](https://profiles.ucl.ac.uk/62569-daryl-cheng/about)**
+· **[Google Scholar](https://scholar.google.com/citations?user=EoVQIlEAAAAJ&hl=en)**
 · **[GitHub](https://github.com/darylcheng)**
 · **[ORCID](https://orcid.org/0000-0001-9906-4298)**
 
