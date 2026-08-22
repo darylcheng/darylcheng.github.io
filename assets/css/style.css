@@ -111,12 +111,16 @@ h1 {
 }
 
 /* Acronyms set in small capitals rather than full caps, so they sit
-   quietly in running text instead of shouting. Typed lower-case in
-   the markup — see note on the SC font in the nav rule below. */
+   quietly in running text instead of shouting. The SC cut of this
+   font carries its small-caps shapes on the lower-case letters only
+   (there's no smcp/c2sc OpenType feature to key off the case of the
+   input), so markup can stay properly capitalised (UCL, NIHR, ...)
+   and text-transform does the visual lower-casing here instead. */
 .sc {
   font-family: "Alegreya Sans SC", "Alegreya Sans", sans-serif;
   font-style: normal;
   letter-spacing: 0.02em;
+  text-transform: lowercase;
 }
 
 p.subtitle {
@@ -168,10 +172,14 @@ nav ul {
   line-height: var(--baseline);
 }
 
+/* Small caps, same trick as .sc above: markup is properly capitalised
+   (UCL, GitHub, ORCID...) and text-transform does the lower-casing
+   the SC font needs to pick its small-caps glyph shapes. */
 nav a {
   font-family: "Alegreya Sans SC", "Alegreya Sans", sans-serif;
   font-size: 1.05rem;
   letter-spacing: 0.04em;
+  text-transform: lowercase;
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid transparent;
