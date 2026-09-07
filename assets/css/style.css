@@ -42,6 +42,13 @@
   --ink-soft: #6e6759;
   --rule: #d8d3c4;
   --accent: #8a5a34;
+
+  /* Heatmap ramp: unfilled day → full accent, matched to the paper. */
+  --hm-0: #e9e3d3;
+  --hm-1: rgba(138, 90, 52, 0.30);
+  --hm-2: rgba(138, 90, 52, 0.52);
+  --hm-3: rgba(138, 90, 52, 0.76);
+  --hm-4: #8a5a34;
 }
 
 * {
@@ -215,6 +222,48 @@ footer a:hover,
 footer a:focus-visible {
   color: var(--accent);
   border-bottom-color: var(--accent);
+}
+
+/* -- github contribution heatmap -- */
+
+.heatmap {
+  margin-top: calc(var(--baseline) * 2);
+  overflow-x: auto;
+}
+
+.heatmap-label {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 3px;
+  width: max-content;
+}
+
+.heatmap-day {
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  background: var(--hm-0);
+}
+
+.heatmap-day[data-level="empty"] { background: transparent; }
+.heatmap-day[data-level="0"] { background: var(--hm-0); }
+.heatmap-day[data-level="1"] { background: var(--hm-1); }
+.heatmap-day[data-level="2"] { background: var(--hm-2); }
+.heatmap-day[data-level="3"] { background: var(--hm-3); }
+.heatmap-day[data-level="4"] { background: var(--hm-4); }
+
+.heatmap-total {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
 }
 
 @media (max-width: 420px) {
